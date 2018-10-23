@@ -1,0 +1,6 @@
+Use FullCalendar.io for the setting of available times by the professionals
+Group professionals by category
+build dashboard for professionals
+
+
+Clients will get a dashboard as well.
