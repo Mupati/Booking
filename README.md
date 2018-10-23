@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # booking
 
 > A Vue.js project
@@ -28,3 +29,6 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# Booking
+>>>>>>> 5e51c33903ea99518721ebb907c0fa1c3a162af6
