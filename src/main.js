@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faComment, faUser, faHome, faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
+import { faComment, faUser, faHome, faCalendarCheck, faSignInAlt, faUserPlus, faEnvelope, faUnlockAlt } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faLinkedin, faJs } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faComment, faUser, faHome, faCalendarCheck, faLinkedin, faFacebook, faTwitter, faJs)
+library.add(faComment, faUser, faHome, faCalendarCheck, faLinkedin, faFacebook, faTwitter, faJs, faSignInAlt, faUserPlus, faEnvelope, faUnlockAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -18,6 +19,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
