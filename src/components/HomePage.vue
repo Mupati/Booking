@@ -5,14 +5,14 @@
        <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h3 class="text-center">
+          <!-- <h3 class="text-center">
             {{ title }}
           </h3>
           <ul class="text-center list-unstyled list-inline">
             <li class="list-inline-item" v-for="(link, index) in links" :key="index">
               {{ link }}
             </li>
-          </ul>
+          </ul> -->
           <p class="text-center">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Expedita cupiditate exercitationem laborum quidem blanditiis
@@ -79,7 +79,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 
 export default {
   name: 'HomePage',
@@ -94,17 +93,19 @@ export default {
         { value: 'Doctor', text: 'Doctor' },
         { value: 'Counsellor', text: 'Counsellor' },
         { value: 'Dentist', text: 'Dentist' }
-      ],
-
-      showLogin: this.$store.state.showLogin
+      ]
     }
   },
 
+  methods: {
+
+  },
+
   computed: {
-    ...mapState([
-      'title',
-      'links'
-    ])
+
+  },
+
+  mounted () {
 
   }
 }

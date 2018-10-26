@@ -85,6 +85,7 @@ export default {
     login: function () {
       // let that = this
       alert('Login Successfull')
+      this.$store.commit('setloginStatus')
       this.$router.push({ path: '/dashboard' })
     },
 

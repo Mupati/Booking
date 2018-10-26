@@ -4,6 +4,8 @@
       <div class="row">
         <div class="col-md-8">
           <p>A nice Dashboard for the Professionals</p>
+          <b-link></b-link>
+          <b-button variant='info' size='lg' @click="logout">Log out</b-button>
         </div>
       </div>
     </div>
@@ -16,23 +18,26 @@ export default {
 
   data () {
     return {
-      showLogin: null
 
     }
   },
 
   methods: {
 
+    logout: function () {
+      alert('Logout Successful')
+      this.$store.commit('setloginStatus')
+      this.$router.push('/')
+    }
   },
 
   computed: {
 
+  },
+
+  mounted () {
+    // this.$store.dispatch('setloginStatus')
   }
-
-  // mounted () {
-
-  //   this.showLogin: !this.$store.state.showLogin
-  // }
 
 }
 </script>

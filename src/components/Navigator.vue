@@ -6,12 +6,13 @@
                 <b-navbar-brand class="ml-md-4"><router-link to="/"><img src="@/assets/logo.png" class="d-inline"></router-link></b-navbar-brand>
                     <b-collapse is-nav right id="nav_collapse" class="justify-content-around">
                         <b-navbar-nav>
-                            <b-nav-item><font-awesome-icon icon="home" /><router-link to="/"> Home</router-link></b-nav-item>
-                            <b-nav-item class="px-md-5 mx-md-5 mx-sm-auto px-sm-1"><font-awesome-icon icon="user" /><router-link to="/about"> About</router-link></b-nav-item>
-                            <b-nav-item class="mr-md-5 pr-md-5 mx-sm-auto px-sm-1"><font-awesome-icon icon="calendar-check" /><router-link to="/appointments"> Appointments</router-link></b-nav-item>
-                            <b-nav-item class="mr-md-5 pr-md-5 mx-sm-auto px-sm-1"><font-awesome-icon icon="calendar-check" /><router-link to="/professionals"> Professionals</router-link></b-nav-item>
-                            <b-nav-item v-if="showLogin"><font-awesome-icon icon="sign-in-alt" /><router-link to="/account"> Log in</router-link></b-nav-item>
-                            <b-nav-item v-if="!showLogin"><font-awesome-icon icon="sign-in-alt" /><router-link to="/account"> Welcome Kofi</router-link></b-nav-item>
+                            <b-nav-item><router-link to="/"><font-awesome-icon icon="home" /> Home</router-link></b-nav-item>
+                            <b-nav-item class="px-md-5 mx-md-5 mx-sm-auto px-sm-1"><router-link to="/about"><font-awesome-icon icon="user" /> About</router-link></b-nav-item>
+                            <b-nav-item class="mr-md-5 pr-md-5 mx-sm-auto px-sm-1"><router-link to="/appointments"><font-awesome-icon icon="calendar-check" /> Appointments</router-link></b-nav-item>
+                            <b-nav-item class="mr-md-5 pr-md-5 mx-sm-auto px-sm-1"><router-link to="/professionals"><font-awesome-icon icon="calendar-check" /> Professionals</router-link></b-nav-item>
+                            <b-nav-item v-if="authStatus"><router-link to="/account"><font-awesome-icon icon="sign-in-alt" /> Welcome Kofi</router-link></b-nav-item>
+                            <b-nav-item v-else><router-link to="/account"><font-awesome-icon icon="sign-in-alt" /> Log in</router-link></b-nav-item>
+
                         </b-navbar-nav>
 
                     </b-collapse>
@@ -27,8 +28,22 @@ export default {
   name: 'Navigator',
   data () {
     return {
-      showLogin: this.$store.state.showLogin
+
     }
+  },
+
+  methods: {
+
+  },
+
+  computed: {
+    authStatus: function () {
+      return this.$store.state.loggedIn
+    }
+  },
+
+  mounted () {
+    console.log(this.$store.state.loggedIn)
   }
 }
 </script>

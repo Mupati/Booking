@@ -10,27 +10,27 @@ export default new Vuex.Store({
 
   state: {
 
-    count: 0,
-    showLogin: true,
-    title: 'God is Greatest',
-    links: [
-      'http://google.com',
-      'http://facebook.com',
-      'http://youtube.com'
-    ]
-  },
+    loggedIn: false
 
-  getters: {
-    countLinks: state => {
-      return state.links.length
-    }
   },
 
   mutations: {
 
+    setloginStatus (state) {
+      state.loggedIn = !state.loggedIn
+    }
+
   },
 
   actions: {
+
+    setloginStatus (context) {
+      context.commit('setloginStatus')
+    }
+
+  },
+
+  getters: {
 
   }
 
